@@ -1,0 +1,532 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+/*
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 2; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  -webkit-text-size-adjust: none; }
+
+mark {
+  background-color: transparent;
+  color: inherit; }
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input, select, textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none; }
+
+/* Basic */
+/* 为IE浏览器设置视口宽度与设备宽度相等 */
+@-ms-viewport {
+  width: device-width; }
+/* 在IE浏览器中设置滚动条样式 */
+body {
+  -ms-overflow-style: scrollbar; }
+/* 设置在屏幕宽度小于或等于480px时，html和body的最小宽度为320px */
+@media screen and (max-width: 480px) {
+  html, body {
+    min-width: 320px; } }
+/* 设置所有元素的盒模型为border-box，意味着元素的宽度和高度包括边框和内边距 */
+html {
+  box-sizing: border-box; }
+/* 继承html元素的盒模型设置 */
+*, *:before, *:after {
+  box-sizing: inherit; }
+/* 设置html和body的高度和宽度为100%，隐藏水平滚动条 */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%; }
+  /* 当屏幕高度小于或等于640px时，设置html和body的高度为自动，并保持最小高度100% */
+  @media screen and (max-height: 640px) {
+    html, body {
+      height: auto;
+      min-height: 100%; } }
+/* 使用弹性盒布局模型来布局body元素 */
+body {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  background-color: #000;
+  padding: 6em 4em 4em 4em; }
+  /* 在页面预加载状态下，禁用所有动画和过渡效果 */
+  body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important; }
+    /* 设置body直接子元素的位置和层叠上下文 */
+  body > * {
+    position: relative;
+    z-index: 2; }
+    /* 不同屏幕宽度下的body内边距调整 */
+  @media screen and (max-width: 1680px) {
+    body {
+      padding: 6em 3.5em 3.5em 3.5em; } }
+  @media screen and (max-width: 736px) {
+    body {
+      padding: 5em 2em 2em 2em; } }
+  @media screen and (max-width: 360px) {
+    body {
+      padding: 5em 1.25em 1.25em 1.25em; } }
+
+/* BG */
+/* 设置id为bg的元素的过渡效果、位置、大小和层叠顺序 */
+#bg {
+  transition: opacity 2s ease-in-out; /* 设置透明度的过渡效果，持续时间为2秒，缓动函数为ease-in-out */
+  height: 100%; /* 高度为100% */
+  left: 0; /* 左边距为0 */
+  opacity: 0.375; /* 设置透明度为0.375 */
+  position: fixed; /* 使用固定定位 */
+  top: 0; /* 顶部距离为0 */
+  width: 100%; /* 宽度为100% */
+  z-index: 1; /* 层叠顺序为1 */
+}
+  /* 设置id为bg的子div元素的过渡效果、背景、位置和可见性 */
+  #bg div {
+  transition: opacity 3s ease; /* 设置透明度的过渡效果，持续时间为3秒，缓动函数为ease */
+  background-size: cover; /* 背景图片覆盖整个元素 */
+  height: 100%; /* 高度为100% */
+  left: 0; /* 左边距为0 */
+  opacity: 0; /* 初始透明度为0 */
+  position: absolute; /* 使用绝对定位 */
+  top: 0; /* 顶部距离为0 */
+  visibility: hidden; /* 初始状态不可见 */
+  width: 150%; /* 宽度为150% */
+  }
+/* 设置id为bg的子div元素在可见状态下的动画、透明度和可见性 */
+    #bg div.visible {
+      -moz-animation: bg 45s linear infinite;
+      -webkit-animation: bg 45s linear infinite;
+      -ms-animation: bg 45s linear infinite;
+      animation: bg 45s linear infinite;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1; }
+      /* 设置id为bg的子div元素在top类下的层叠顺序 */
+      #bg div.visible.top {
+        z-index: 2; }
+        /* 不同屏幕尺寸下的动画持续时间调整 */
+        /* 屏幕宽度小于1280px时，动画持续时间调整为29.25秒 */
+      @media screen and (max-width: 1280px) {
+        #bg div.visible {
+          -moz-animation: bg 29.25s linear infinite;
+          -webkit-animation: bg 29.25s linear infinite;
+          -ms-animation: bg 29.25s linear infinite;
+          animation: bg 29.25s linear infinite; } }
+      @media screen and (max-width: 736px) {/* 屏幕宽度小于736px时，动画持续时间调整为18秒 */
+        #bg div.visible {
+          -moz-animation: bg 18s linear infinite;
+          -webkit-animation: bg 18s linear infinite;
+          -ms-animation: bg 18s linear infinite;
+          animation: bg 18s linear infinite; } }
+    #bg div:only-child {/* 当id为bg的子div元素只有一个时，改变动画的方向 */
+      -moz-animation-direction: alternate !important;
+      -webkit-animation-direction: alternate !important;
+      -ms-animation-direction: alternate !important;
+      animation-direction: alternate !important; }
+  body.is-preload #bg {/* 在页面预加载状态下，设置id为bg的元素的透明度 */
+    opacity: 0; }
+
+@-moz-keyframes bg {/* 针对Mozilla（Firefox）浏览器的关键帧动画 */
+  0% {
+    -moz-transform: translateX(0);/* 起始状态：不进行位移 */
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+  100% {
+    -moz-transform: translateX(-25%);/* 终点状态：向左移动元素宽度的25% */
+    -webkit-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    transform: translateX(-25%); } }
+
+@-webkit-keyframes bg {/* 针对Webkit（如Chrome、Safari）浏览器的关键帧动画 */
+  0% {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+  100% {
+    -moz-transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    transform: translateX(-25%); } }
+
+@-ms-keyframes bg {/* 针对Microsoft（旧版IE）浏览器的关键帧动画 */
+  0% {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+  100% {
+    -moz-transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    transform: translateX(-25%); } }
+
+@keyframes bg {/* 标准语法，适用于所有支持CSS3动画的现代浏览器 */
+  0% {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+  100% {
+    -moz-transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    transform: translateX(-25%); } }
+
+/* Type */
+/* 为文档体、输入框、选择框和文本区域设置基本的文本样式 */
+body, input, select, textarea {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Roboto", sans-serif;
+  font-size: 16pt;
+  font-weight: 400;
+  letter-spacing: -0.01em;/* 字母间距微微减小 */
+  line-height: 1.65em; }/* 行高设为1.65倍的字体大小 */
+  @media screen and (max-width: 1680px) {/* 当屏幕宽度小于1680px时，字体大小降至12磅 */
+    body, input, select, textarea {
+      font-size: 12pt; } }
+  @media screen and (max-width: 1280px) {/* 当屏幕宽度小于1280px时，字体大小降至11磅 */
+    body, input, select, textarea {
+      font-size: 11pt; } }
+      /* 当屏幕宽度小于980px、736px和480px时，字体大小均为12磅 */
+  @media screen and (max-width: 980px) {
+    body, input, select, textarea {
+      font-size: 12pt; } }
+  @media screen and (max-width: 736px) {
+    body, input, select, textarea {
+      font-size: 12pt; } }
+  @media screen and (max-width: 480px) {
+    body, input, select, textarea {
+      font-size: 12pt; } }
+/* 链接的基本样式 */
+a {
+  -moz-transition: border-bottom-color 0.2s ease, color 0.2s ease;/* 应用过渡效果 */
+  -webkit-transition: border-bottom-color 0.2s ease, color 0.2s ease;
+  -ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
+  transition: border-bottom-color 0.2s ease, color 0.2s ease;
+  border-bottom: dotted 1px rgba(255, 255, 255, 0.25);
+  color: #1cb495;
+  text-decoration: none; }
+  /* 链接在悬停时的样式 */
+  a:hover {
+    border-bottom-color: transparent;
+    color: #1cb495 !important;
+    text-decoration: none; }
+/* 加粗文本样式 */
+strong, b {
+  color: #fff;
+  font-weight: 700; }
+/* 斜体文本样式 */
+em, i {
+  font-style: italic; }
+/* 段落的基本样式 */
+p {
+  margin: 0 0 2em 0; }
+/* 标题的基本样式 */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0 0 1em 0; }
+  /* 标题中的链接样式 */
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;/* 继承标题颜色 */
+    text-decoration: none; }
+/* 不同级别标题的字体大小 */
+h1 {
+  font-size: 2.5em;
+  line-height: 1.25em; }
+
+h2 {
+  font-size: 1.75em;
+  line-height: 1.5em; }
+
+h3 {
+  font-size: 1.35em;
+  line-height: 1.5em; }
+
+h4 {
+  font-size: 1.1em;
+  line-height: 1.5em; }
+
+h5 {
+  font-size: 0.9em;
+  line-height: 1.5em; }
+
+h6 {
+  font-size: 0.7em;
+  line-height: 1.5em; }
+/*上下标*/
+sub {
+  font-size: 0.8em;
+  position: relative;
+  top: 0.5em; }
+
+sup {
+  font-size: 0.8em;
+  position: relative;
+  top: -0.5em; }
+/*引用样式*/
+blockquote {
+  border-left: solid 8px rgba(255, 255, 255, 0.35);
+  font-style: italic;
+  margin: 0 0 2em 0;
+  padding: 0.5em 0 0.5em 2em; }
+
+code {
+  background: rgba(255, 255, 255, 0.125);
+  border-radius: 6px;
+  border: solid 2px rgba(255, 255, 255, 0.35);
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  margin: 0 0.25em;
+  padding: 0.25em 0.65em; }
+
+pre {
+  -webkit-overflow-scrolling: touch;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  margin: 0 0 2em 0; }
+  pre code {
+    display: block;
+    line-height: 1.75em;
+    padding: 1em 1.5em;
+    overflow-x: auto; }
+
+hr {
+  border: 0;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.35);
+  margin: 2em 0; }
+  hr.major {
+    margin: 3em 0; }
+
+/* Section/Article */
+/* 对带有特殊类的section和article元素应用文本居中对齐 */
+section.special, article.special {
+  text-align: center; }
+/* header内的段落的基本样式 */
+header p {
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  margin: 0 0 1.5em 0; }
+/* header内紧跟在h2标题后的段落样式 */
+header h2 + p {
+  font-size: 1.25em;
+  margin-top: -1em;
+  line-height: 1.5em; }
+/* header内紧跟在h3标题后的段落样式 */
+header h3 + p {
+  font-size: 1.1em;
+  margin-top: -0.8em;
+  line-height: 1.5em; }
+/* header内紧跟在h4、h5、h6标题后的段落样式 */
+header h4 + p,
+header h5 + p,
+header h6 + p {
+  font-size: 0.9em;
+  margin-top: -0.6em;
+  line-height: 1.5em; }
+/* 在不同屏幕尺寸下对header内的换行符（br）进行显示或隐藏 */
+@media screen and (max-width: 980px) {
+  header br {/* 屏幕宽度小于980px时隐藏换行符 */
+    display: none; } }
+
+@media screen and (max-width: 736px) {
+  header br {/* 屏幕宽度小于736px时显示换行符 */
+    display: inline; } }
+
+@media screen and (max-width: 480px) {
+  header br {/* 屏幕宽度小于480px时再次隐藏换行符 */
+    display: none; } }
+
+
+/* Header */
+#header h1 {
+  font-size: 3.25em;
+  margin: 0 0 0.55em 0; }
+
+#header p {
+  font-size: 1.35em;
+  line-height: 1.65em; }
+
+#header a {
+  color: inherit; }
+
+@media screen and (max-width: 736px) {
+  #header h1 {
+    font-size: 2em; }
+  #header p {
+    font-size: 1em; } }
+
+@media screen and (max-width: 480px) {
+  #header {
+    margin: 0 0 1em 0; } } */
+
+#footer {
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  bottom: 4em;
+  color: rgba(255, 255, 255, 0.5);
+  left: 4em;
+  opacity: 0.5;
+  position: absolute; }
+  #footer .icons {
+    margin: 0 0 0.5em 0; }
+  #footer .copyright {
+    font-size: 0.8em;
+    list-style: none;
+    padding: 0; }
+    #footer .copyright li {
+      border-left: solid 1px rgba(255, 255, 255, 0.25);
+      display: inline-block;
+      line-height: 1em;
+      margin: 0 0 0 0.75em;
+      padding: 0 0 0 0.75em; }
+      #footer .copyright li:first-child {
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0; }
+    #footer .copyright a {
+      color: inherit; }
+  #footer:hover {
+    opacity: 1; }
+  #footer > :last-child {
+    margin-bottom: 0; }
+  @media screen and (max-width: 1680px) {
+    #footer {
+      bottom: 3.5em;
+      left: 3.5em; } }
+  @media screen and (max-width: 736px) {
+    #footer {
+      bottom: 2em;
+      left: 2em; } }
+  @media screen and (max-width: 360px) {
+    #footer {
+      bottom: 1.25em;
+      left: 1.25em; } }
+  @media screen and (max-height: 640px) {
+    #footer {
+      bottom: auto;
+      left: auto;
+      margin: 1em 0 0 0;
+      position: relative; } }
+
+      .button {
+        padding: 20px 0px; */
+        background-color:transparent;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-family: "Arial", sans-serif;;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        font-size: 2.5em;
+        font-weight: 700;
+        transform-origin: left center; 
+      }
+      
+      .button:hover {
+        transform: scale(1.1); /* 悬浮时放大10% */
+      }
+      
+      .button:active {
+        transform: scale(1.2); /* 点击时放大20% */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+    }
+    
+    /* 轮播图容器样式 */
+.slideshow-container {
+  max-width: 1000px; /* 最大宽度 */
+  position: relative;
+  margin: auto;
+}
+
+/* 单个幻灯片样式 */
+.slide {
+  display: none;
+}
+
+/* 淡入淡出效果 */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* 动画效果 */
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
